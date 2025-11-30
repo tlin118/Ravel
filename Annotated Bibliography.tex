@@ -1,0 +1,53 @@
+\documentclass[english,12pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{babel}
+\usepackage{fancyhdr}
+\usepackage{csquotes}
+\usepackage[doublespacing]{setspace}
+
+\usepackage[authordate-trad,backend=biber]{biblatex-chicago}
+% \usepackage[backend=biber, style=authoryear]{biblatex}
+
+\renewbibmacro*{finentry}{
+  \setunit{\bibpagerefpunct}
+  \printfield{pageref}
+  \ifbibliography{
+    \finentry\relax
+  }{
+    \finentry\relax
+  }
+  \iffieldundef{annotation}{}{%
+    \par\vspace{0.5\baselineskip}
+    \noindent \printfield{annotation}
+  }
+}
+
+\addbibresource{Bibliography.bib}
+
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\title{\textbf{Annotated Bibliography}}
+\author{Tif{}fany Lin}
+\date{November 4, 2025}
+
+\begin{document}
+\maketitle
+
+% Autocite \autocite{Bhogal}
+% textcite \textcite{Bhogal}
+
+% Autocite \autocite{Kilpatrick}
+% Autocite \autocite{Benjamin}
+% Autocite \autocite{Zank_2009}
+% Autocite \autocite{Stuckenschmidt}
+
+% \newpage
+
+\noindent
+Ravel's influence in popular culture.
+
+\nocite{*}
+\printbibliography
+
+\end{document}
